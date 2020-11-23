@@ -1,21 +1,66 @@
+// let socket
 let color = "#fff"
-let strokeWidth = 4
+let strokeWidth = 3
+let canvas
 
 
 function setup (){
-    const cv = createCanvas(800, 700)
-    cv.position(250, 100)
-    cv.background(0)
+    canvas = createCanvas(800, 600)
+	canvas.position(300, 140)
+	canvas.background(0)
+
+    // //start the socket connection
+    // socket = io.connect('http://localhost:3000')
+
+    // //callback function
+    // socket.on('mouse', data => {
+    //  stroke(data.color)
+    //  strokeWeight(data.strokeWidth)
+    //  line(data.x, data.y, data.px, data.py)
+    // })
 }
 
-function touchStarted() {
-    stroke(color)
-    strokeWeight(strokeWidth)
-    line(mouseX, mouseY, pmouseX, pmouseY)
-   }
-
+//draw function
 function mouseDragged() {
     stroke(color)
     strokeWeight(strokeWidth)
     line(mouseX, mouseY, pmouseX, pmouseY)
+// send the mouse coordinates
+    sendmouse(mouseX, mouseY, pmouseX, pmouseY)
    }
+
+
+// Sending data to the socket
+function sendmouse(x, y, pX, pY) {
+	const data = {
+		x: x,
+		y: y,
+		px: pX,
+		py: pY,
+		color: color,
+		strokeWidth: strokeWidth,
+	}
+
+	socket.emit('mouse', data)
+}
+
+
+
+// function touchStarted() {
+//     stroke(color)
+//     strokeWeight(strokeWidth)
+//     line(touchX, touchY, ptouchX, ptouchY)
+//     sendtouch(touchX, touchY, ptouchX, ptouchY)
+//    }
+
+// function sendtouch(x, y, pX, pY) {
+//     const data = {
+//         x: x,
+//         y: y,
+//         px: pX,
+//         py: pY,
+//         color: color,
+//         strokeWidth: strokeWidth,
+//     }
+//     socket.emit('touch', data)
+// }
