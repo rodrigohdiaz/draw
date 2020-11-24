@@ -1,23 +1,23 @@
-// let socket
+let socket
 let color = "#fff"
 let strokeWidth = 3
 let canvas
 
 
 function setup (){
-    canvas = createCanvas(800, 600)
-	canvas.position(300, 140)
+    canvas = createCanvas(700, 400)
+	canvas.position(350, 140)
 	canvas.background(0)
 
-    // //start the socket connection
-    // socket = io.connect('http://localhost:3000')
+    //start the socket connection
+    socket = io.connect('http://localhost:3000')
 
-    // //callback function
-    // socket.on('mouse', data => {
-    //  stroke(data.color)
-    //  strokeWeight(data.strokeWidth)
-    //  line(data.x, data.y, data.px, data.py)
-    // })
+    //callback function
+    socket.on('mouse', data => {
+     stroke(data.color)
+     strokeWeight(data.strokeWidth)
+     line(data.x, data.y, data.px, data.py)
+    })
 }
 
 //draw function
