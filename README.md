@@ -11,4 +11,7 @@ As a user:
     - I want to be able to see whatever any other user is drawing
     - I want to be able to create a room where I can be the only one drawing and any other user in the page can see only what I draw.
     
+
+To run: 
+After installing the dependencies (npm install), type "node server" on the terminal, it will be listening to localhost:3000
      
