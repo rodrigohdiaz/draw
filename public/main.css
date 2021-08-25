@@ -1,3 +1,4 @@
+html,
 body {
     height: 100%;
     width: 100%;
@@ -8,13 +9,23 @@ p {
     text-align: center;
 }
 
-
+/* canvas */ 
+canvas{
+	display: flex;
+	position: absolute;
+	top: 25px;
+	left: 20%;
+	margin: 100px auto;
+	z-index: 10;
+}
 /* container */
 
 #share {
 	width: 100%;
-  	margin: 650px auto;
-  	text-align: center;
+	position: absolute;
+	margin: 370px auto;
+	display: flex;
+	justify-content: center;
 }
 
 /* buttons */
@@ -34,16 +45,6 @@ p {
 #share a:hover {
 	opacity: 1;
 }
-
-/* icons */
-
-/* #share i {
-  	position: relative;
-  	top: 50%;
-  	transform: translateY(-50%);
-} */
-
-/* colors */
 
 .facebook {
  	background: #3b5998;
