@@ -6,7 +6,7 @@ let canvas
 
 function setup (){
     canvas = createCanvas(700, 400)
-	canvas.position(350, 140)
+	// canvas.position(300, 140)
 	canvas.background(0)
 
     //start the socket connection
