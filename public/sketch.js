@@ -44,23 +44,3 @@ function sendmouse(x, y, pX, pY) {
 	socket.emit('mouse', data)
 }
 
-
-
-// function touchStarted() {
-//     stroke(color)
-//     strokeWeight(strokeWidth)
-//     line(touchX, touchY, ptouchX, ptouchY)
-//     sendtouch(touchX, touchY, ptouchX, ptouchY)
-//    }
-
-// function sendtouch(x, y, pX, pY) {
-//     const data = {
-//         x: x,
-//         y: y,
-//         px: pX,
-//         py: pY,
-//         color: color,
-//         strokeWidth: strokeWidth,
-//     }
-//     socket.emit('touch', data)
-// }
